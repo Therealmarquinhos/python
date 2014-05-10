@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    
+<!-- Mirrored from learnpythonthehardway.org/book/ex5.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:18 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Learn Python</title>
+        <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+        <link href="stylesheets/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/main.css" /> 
+        <script src="javascripts/modernizr.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
+<title>Exercise 5: More Variables and Printing</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="content-wrap">
+                <div class="row"><!-- header start -->
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                            <ul class="button-group">
+                                <li><a href="index.html" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                                <li><a href="#video" class="button"><i id="video_toggle_icon" class="fa fa-play fa-1x"></i></a></li>
+                                <li><a href="help.html" class="button"><i class="fa fa-ambulance fa-1x"></i></a></li>
+                            </ul>
+                        </div>
+                        <h1><a href="index.html"><img src="images/logo.png"></a></h1>
+                    </div>
+                </div><!-- header end -->
+                <div class="row"><!-- main_wrap start -->
+                    <div class="wrap scrol">
+                        <div class="row inner">
+                            <div class="large-12 columns">
+                                <h1 class="title">Exercise 5: More Variables and Printing</h1>
+                                <p>Now we'll do even more typing of variables and printing them out.  This time we'll use something called a &quot;format string.&quot;  Every time you put <tt class="docutils literal">&quot;</tt> (double-quotes) around a piece of text you have been making a <em>string</em>.  A string is how you make something that your program might give to a human.  You print them, save them to files, send them to web servers, all sorts of things.</p>
+<p>Strings are really handy, so in this exercise you will learn how to make strings that have variables embedded in them.  You embed variables inside a string by using specialized format sequences and then putting the variables at the end with a special syntax that tells Python, &quot;Hey, this is a format string, put these variables in there.&quot;</p>
+<p>As usual, just type this in even if you do not understand it and make it exactly the same.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><a name="ex--ex5.py-idio.html-1"></a><span class="n">my_name</span> <span class="o">=</span> <span class="s">&#39;Zed A. Shaw&#39;</span>
+<a name="ex--ex5.py-idio.html-2"></a><span class="n">my_age</span> <span class="o">=</span> <span class="mi">35</span> <span class="c"># not a lie</span>
+<a name="ex--ex5.py-idio.html-3"></a><span class="n">my_height</span> <span class="o">=</span> <span class="mi">74</span> <span class="c"># inches</span>
+<a name="ex--ex5.py-idio.html-4"></a><span class="n">my_weight</span> <span class="o">=</span> <span class="mi">180</span> <span class="c"># lbs</span>
+<a name="ex--ex5.py-idio.html-5"></a><span class="n">my_eyes</span> <span class="o">=</span> <span class="s">&#39;Blue&#39;</span>
+<a name="ex--ex5.py-idio.html-6"></a><span class="n">my_teeth</span> <span class="o">=</span> <span class="s">&#39;White&#39;</span>
+<a name="ex--ex5.py-idio.html-7"></a><span class="n">my_hair</span> <span class="o">=</span> <span class="s">&#39;Brown&#39;</span>
+<a name="ex--ex5.py-idio.html-8"></a>
+<a name="ex--ex5.py-idio.html-9"></a><span class="k">print</span> <span class="s">&quot;Let&#39;s talk about </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="n">my_name</span>
+<a name="ex--ex5.py-idio.html-10"></a><span class="k">print</span> <span class="s">&quot;He&#39;s </span><span class="si">%d</span><span class="s"> inches tall.&quot;</span> <span class="o">%</span> <span class="n">my_height</span>
+<a name="ex--ex5.py-idio.html-11"></a><span class="k">print</span> <span class="s">&quot;He&#39;s </span><span class="si">%d</span><span class="s"> pounds heavy.&quot;</span> <span class="o">%</span> <span class="n">my_weight</span>
+<a name="ex--ex5.py-idio.html-12"></a><span class="k">print</span> <span class="s">&quot;Actually that&#39;s not too heavy.&quot;</span>
+<a name="ex--ex5.py-idio.html-13"></a><span class="k">print</span> <span class="s">&quot;He&#39;s got </span><span class="si">%s</span><span class="s"> eyes and </span><span class="si">%s</span><span class="s"> hair.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">my_eyes</span><span class="p">,</span> <span class="n">my_hair</span><span class="p">)</span>
+<a name="ex--ex5.py-idio.html-14"></a><span class="k">print</span> <span class="s">&quot;His teeth are usually </span><span class="si">%s</span><span class="s"> depending on the coffee.&quot;</span> <span class="o">%</span> <span class="n">my_teeth</span>
+<a name="ex--ex5.py-idio.html-15"></a>
+<a name="ex--ex5.py-idio.html-16"></a><span class="c"># this line is tricky, try to get it exactly right</span>
+<a name="ex--ex5.py-idio.html-17"></a><span class="k">print</span> <span class="s">&quot;If I add </span><span class="si">%d</span><span class="s">, </span><span class="si">%d</span><span class="s">, and </span><span class="si">%d</span><span class="s"> I get </span><span class="si">%d</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="p">(</span>
+<a name="ex--ex5.py-idio.html-18"></a>    <span class="n">my_age</span><span class="p">,</span> <span class="n">my_height</span><span class="p">,</span> <span class="n">my_weight</span><span class="p">,</span> <span class="n">my_age</span> <span class="o">+</span> <span class="n">my_height</span> <span class="o">+</span> <span class="n">my_weight</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Remember to put <tt class="docutils literal"># <span class="pre">--</span> coding: <span class="pre">utf-8</span> <span class="pre">--</span></tt> at the top if you use non-ASCII
+characters and get an encoding error.</p>
+</div>
+<div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<div class="highlight"><pre><a name="ex--ex5.sh-idio-shint-pyg.html-1"></a><span class="gp">$</span> python ex5.py
+<a name="ex--ex5.sh-idio-shint-pyg.html-2"></a><span class="go">Let&#39;s talk about Zed A. Shaw.</span>
+<a name="ex--ex5.sh-idio-shint-pyg.html-3"></a><span class="go">He&#39;s 74 inches tall.</span>
+<a name="ex--ex5.sh-idio-shint-pyg.html-4"></a><span class="go">He&#39;s 180 pounds heavy.</span>
+<a name="ex--ex5.sh-idio-shint-pyg.html-5"></a><span class="go">Actually that&#39;s not too heavy.</span>
+<a name="ex--ex5.sh-idio-shint-pyg.html-6"></a><span class="go">He&#39;s got Blue eyes and Brown hair.</span>
+<a name="ex--ex5.sh-idio-shint-pyg.html-7"></a><span class="go">His teeth are usually White depending on the coffee.</span>
+<a name="ex--ex5.sh-idio-shint-pyg.html-8"></a><span class="go">If I add 35, 74, and 180 I get 289.</span>
+</pre></div></div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Change all the variables so there isn't the <tt class="docutils literal">my_</tt> in front.  Make sure you change the name everywhere, not just where you used <tt class="docutils literal">=</tt> to set them.</li>
+<li>Try more format characters.  <tt class="docutils literal">%r</tt> is a very useful one.  It's like saying &quot;print this no matter what.&quot;</li>
+<li>Search online for all of the Python format characters.</li>
+<li>Try to write some variables that convert the inches and pounds to centimeters and kilos.  Do not just type in the measurements. Work out the math in Python.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>Can I make a variable like this: <tt class="docutils literal">1 = 'Zed Shaw'</tt>?</dt>
+<dd>No, the <tt class="docutils literal">1</tt> is not a valid variable name.  They need to start with a character, so <tt class="docutils literal">a1</tt> would work, but <tt class="docutils literal">1</tt> will not.</dd>
+<dt>What does <tt class="docutils literal">%s</tt>, <tt class="docutils literal">%r</tt>, and <tt class="docutils literal">%d</tt> do again?</dt>
+<dd>You'll learn more about this as you continue, but they are &quot;formatters.&quot; They tell Python to take the variable on the right and put it in to replace the <tt class="docutils literal">%s</tt> with its value.  I don't get it, what is a &quot;formatter&quot;? Huh?  The problem with teaching you programming is that to understand many of my descriptions you need to know how to do programming already.  The way I solve this is I make you do something, and then I explain it later.  When you run into these kinds of questions, write them down and see if I explain it later.</dd>
+<dt>How can I round a floating point number?</dt>
+<dd>You can use the <tt class="docutils literal">round()</tt> function like this:  <tt class="docutils literal">round(1.7333)</tt>.</dd>
+<dt>I get this error <tt class="docutils literal">TypeError: 'str' object is not callable</tt>.</dt>
+<dd>You probably forgot the <tt class="docutils literal">%</tt> between the string and the list of variables.</dd>
+<dt>Why does this not make sense to me?</dt>
+<dd>Try making the numbers in this script your measurements.  It's weird, but talking about yourself will make it seem more real.</dd>
+</dl>
+</div>
+                            </div>
+                        </div>
+
+                        <div id="video" class="row inner">
+                            <div class="small-12 small-centered columns">
+                                <div data-paydiv_product="2" id='paydiv'>
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                                <!-- oops, these don't work 
+                            <ul class="button-group">
+                                <li><a href="/book/" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                            </ul>
+                            -->
+                        </div>
+
+                        <h1>
+                            <a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- End Main Content and Sidebar -->
+
+                <div id="footer">
+                    <div class="row footer"><!-- footer tabs start -->
+                        <div class="large-12 columns">
+                            <div class="row">
+                                <div class="large-10 columns" id="footer-banner">
+                                    <span class="buy">Buy Learn Python The Hard Way, 3rd Edition Books And Videos From These Retailers</span>
+                                </div>
+                                <div class="large-2 columns" id="twitter-banner">
+<a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="https://paydiv.io/access/buy/2/" class="button large-2 columns">
+                                    <h3>Zed</h3>
+                                    <p>PDF+Videos+Updates<span>$29.95</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/0321884914/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321884914&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/B00FGUS948/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00FGUS948&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Kindle<span>$17.27</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780321884916" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780133124347&amp;itm=1&amp;usri=learn+python+the+hard+way" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Nook (No Videos)<span>$17.99</span></p>
+                                </a>
+                                <a href="http://www.informit.com/store/learn-python-the-hard-way-a-very-simple-introduction-9780321884916" class="button large-2 columns">
+                                    <h3>InformIT</h3>
+                                    <p>Bundle <span>$43.19</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="javascripts/jquery.js"></script>
+        <script src="javascripts/foundation.min.js"></script>
+        <script src="javascripts/index.js"></script>
+        <script src="../../paydiv.io/static/jzed.js"></script>
+        <script src="../../paydiv.io/static/js/videojs/video.js"></script>
+        <link rel="stylesheet" href="../../paydiv.io/static/js/videojs/video-js.css">
+        <script src="../../paydiv.io/static/api/v1/paydiv.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script>$(document).foundation();</script>
+
+        <script type="text/javascript">
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24168052-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+        </script>
+        
+    </body>
+
+<!-- Mirrored from learnpythonthehardway.org/book/ex5.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:18 GMT -->
+</html>
+

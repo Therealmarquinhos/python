@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    
+<!-- Mirrored from learnpythonthehardway.org/book/ex4.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:18 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Learn Python</title>
+        <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+        <link href="stylesheets/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/main.css" /> 
+        <script src="javascripts/modernizr.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
+<title>Exercise 4: Variables And Names</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="content-wrap">
+                <div class="row"><!-- header start -->
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                            <ul class="button-group">
+                                <li><a href="index.html" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                                <li><a href="#video" class="button"><i id="video_toggle_icon" class="fa fa-play fa-1x"></i></a></li>
+                                <li><a href="help.html" class="button"><i class="fa fa-ambulance fa-1x"></i></a></li>
+                            </ul>
+                        </div>
+                        <h1><a href="index.html"><img src="images/logo.png"></a></h1>
+                    </div>
+                </div><!-- header end -->
+                <div class="row"><!-- main_wrap start -->
+                    <div class="wrap scrol">
+                        <div class="row inner">
+                            <div class="large-12 columns">
+                                <h1 class="title">Exercise 4: Variables And Names</h1>
+                                <p>Now you can print things with <tt class="docutils literal">print</tt> and you can do math.  The next step is to learn about variables.  In programming a variable is nothing more than a name for something so you can use the name rather than the something as you code.  Programmers use these variable names to make their code read more like English, and because they have lousy memories.  If they didn't use good names for things in their software, they'd get lost when they tried to read their code again.</p>
+<p>If you get stuck with this exercise, remember the tricks you have been taught so far of finding differences and focusing on details:</p>
+<ol class="arabic simple">
+<li>Write a comment above each line explaining to yourself what it does in English.</li>
+<li>Read your <tt class="docutils literal">.py</tt> file backward.</li>
+<li>Read your <tt class="docutils literal">.py</tt> file out loud, saying even the characters.</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><a name="ex--ex4.py-idio.html-1"></a><span class="n">cars</span> <span class="o">=</span> <span class="mi">100</span>
+<a name="ex--ex4.py-idio.html-2"></a><span class="n">space_in_a_car</span> <span class="o">=</span> <span class="mf">4.0</span>
+<a name="ex--ex4.py-idio.html-3"></a><span class="n">drivers</span> <span class="o">=</span> <span class="mi">30</span>
+<a name="ex--ex4.py-idio.html-4"></a><span class="n">passengers</span> <span class="o">=</span> <span class="mi">90</span>
+<a name="ex--ex4.py-idio.html-5"></a><span class="n">cars_not_driven</span> <span class="o">=</span> <span class="n">cars</span> <span class="o">-</span> <span class="n">drivers</span>
+<a name="ex--ex4.py-idio.html-6"></a><span class="n">cars_driven</span> <span class="o">=</span> <span class="n">drivers</span>
+<a name="ex--ex4.py-idio.html-7"></a><span class="n">carpool_capacity</span> <span class="o">=</span> <span class="n">cars_driven</span> <span class="o">*</span> <span class="n">space_in_a_car</span>
+<a name="ex--ex4.py-idio.html-8"></a><span class="n">average_passengers_per_car</span> <span class="o">=</span> <span class="n">passengers</span> <span class="o">/</span> <span class="n">cars_driven</span>
+<a name="ex--ex4.py-idio.html-9"></a>
+<a name="ex--ex4.py-idio.html-10"></a>
+<a name="ex--ex4.py-idio.html-11"></a><span class="k">print</span> <span class="s">&quot;There are&quot;</span><span class="p">,</span> <span class="n">cars</span><span class="p">,</span> <span class="s">&quot;cars available.&quot;</span>
+<a name="ex--ex4.py-idio.html-12"></a><span class="k">print</span> <span class="s">&quot;There are only&quot;</span><span class="p">,</span> <span class="n">drivers</span><span class="p">,</span> <span class="s">&quot;drivers available.&quot;</span>
+<a name="ex--ex4.py-idio.html-13"></a><span class="k">print</span> <span class="s">&quot;There will be&quot;</span><span class="p">,</span> <span class="n">cars_not_driven</span><span class="p">,</span> <span class="s">&quot;empty cars today.&quot;</span>
+<a name="ex--ex4.py-idio.html-14"></a><span class="k">print</span> <span class="s">&quot;We can transport&quot;</span><span class="p">,</span> <span class="n">carpool_capacity</span><span class="p">,</span> <span class="s">&quot;people today.&quot;</span>
+<a name="ex--ex4.py-idio.html-15"></a><span class="k">print</span> <span class="s">&quot;We have&quot;</span><span class="p">,</span> <span class="n">passengers</span><span class="p">,</span> <span class="s">&quot;to carpool today.&quot;</span>
+<a name="ex--ex4.py-idio.html-16"></a><span class="k">print</span> <span class="s">&quot;We need to put about&quot;</span><span class="p">,</span> <span class="n">average_passengers_per_car</span><span class="p">,</span> <span class="s">&quot;in each car.&quot;</span>
+</pre></div>
+</td></tr></table><div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal">_</tt> in <tt class="docutils literal">space_in_a_car</tt> is called an <tt class="docutils literal">underscore character</tt>.  Find out how to type it if you do not already know.  We use this character a lot to put an imaginary space between words in variable names.</p>
+</div>
+<div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<div class="highlight"><pre><a name="ex--ex4.sh-idio-shint-pyg.html-1"></a><span class="gp">$</span> python ex4.py
+<a name="ex--ex4.sh-idio-shint-pyg.html-2"></a><span class="go">There are 100 cars available.</span>
+<a name="ex--ex4.sh-idio-shint-pyg.html-3"></a><span class="go">There are only 30 drivers available.</span>
+<a name="ex--ex4.sh-idio-shint-pyg.html-4"></a><span class="go">There will be 70 empty cars today.</span>
+<a name="ex--ex4.sh-idio-shint-pyg.html-5"></a><span class="go">We can transport 120.0 people today.</span>
+<a name="ex--ex4.sh-idio-shint-pyg.html-6"></a><span class="go">We have 90 to carpool today.</span>
+<a name="ex--ex4.sh-idio-shint-pyg.html-7"></a><span class="go">We need to put about 3 in each car.</span>
+</pre></div></div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<p>When I wrote this program the first time I had a mistake, and <em>python</em> told me about it like this:</p>
+<pre class="literal-block">
+Traceback (most recent call last):
+      File &quot;ex4.py&quot;, line 8, in &lt;module&gt;
+        average_passengers_per_car = car_pool_capacity / passenger
+    NameError: name 'car_pool_capacity' is not defined
+</pre>
+<p>Explain this error in your own words.  Make sure you use line numbers and explain why.</p>
+<p>Here's more Study Drills:</p>
+<ol class="arabic simple">
+<li>I used 4.0 for <tt class="docutils literal">space_in_a_car</tt>, but is that necessary? What happens if it's just 4?</li>
+<li>Remember that 4.0 is a &quot;floating point&quot; number.  Find out what that means.</li>
+<li>Write comments above each of the variable assignments.</li>
+<li>Make sure you know what <tt class="docutils literal">=</tt> is called (equals) and that it's making names for things.</li>
+<li>Remember that <tt class="docutils literal">_</tt> is an underscore character.</li>
+<li>Try running <tt class="docutils literal">python</tt> as a calculator like you did before and use variable names to do your calculations.  Popular variable names are also <tt class="docutils literal">i</tt>, <tt class="docutils literal">x</tt>, and <tt class="docutils literal">j</tt>.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>What is the difference between <tt class="docutils literal">=</tt> (single-equal) and <tt class="docutils literal">==</tt> (double-equal)?</dt>
+<dd>The <tt class="docutils literal">=</tt> (single-equal) assigns the value on the right to a variable on the left.  The <tt class="docutils literal">==</tt> (double-equal) tests if two things have the same value, and you'll learn about this in Exercise 27.</dd>
+<dt>Can we write <tt class="docutils literal">x=100</tt> instead of <tt class="docutils literal">x = 100</tt>?</dt>
+<dd>You can, but it's bad form. You should add space around operators like this so that it's easier to read.</dd>
+<dt>How can I print without spaces between words in <tt class="docutils literal">print</tt>?</dt>
+<dd>You do it like this: <tt class="docutils literal">print &quot;Hey %s there.&quot; % &quot;you&quot;</tt>. You will do more of this soon.</dd>
+<dt>What do you mean by &quot;read the file backward&quot;?</dt>
+<dd>Very simple. Imagine you have a file with 16 lines of code in it.  Start at line 16, and compare it to my file at line 16. Then do it again for 15, and so on until you've read the whole file backward.</dd>
+<dt>Why did you use <tt class="docutils literal">4.0</tt> for <tt class="docutils literal">space</tt>?</dt>
+<dd>It is mostly so you can then find out what a floating point number is and ask this question.  See the Study Drills.</dd>
+</dl>
+</div>
+                            </div>
+                        </div>
+
+                        <div id="video" class="row inner">
+                            <div class="small-12 small-centered columns">
+                                <div data-paydiv_product="2" id='paydiv'>
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                                <!-- oops, these don't work 
+                            <ul class="button-group">
+                                <li><a href="/book/" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                            </ul>
+                            -->
+                        </div>
+
+                        <h1>
+                            <a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- End Main Content and Sidebar -->
+
+                <div id="footer">
+                    <div class="row footer"><!-- footer tabs start -->
+                        <div class="large-12 columns">
+                            <div class="row">
+                                <div class="large-10 columns" id="footer-banner">
+                                    <span class="buy">Buy Learn Python The Hard Way, 3rd Edition Books And Videos From These Retailers</span>
+                                </div>
+                                <div class="large-2 columns" id="twitter-banner">
+<a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="https://paydiv.io/access/buy/2/" class="button large-2 columns">
+                                    <h3>Zed</h3>
+                                    <p>PDF+Videos+Updates<span>$29.95</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/0321884914/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321884914&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/B00FGUS948/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00FGUS948&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Kindle<span>$17.27</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780321884916" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780133124347&amp;itm=1&amp;usri=learn+python+the+hard+way" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Nook (No Videos)<span>$17.99</span></p>
+                                </a>
+                                <a href="http://www.informit.com/store/learn-python-the-hard-way-a-very-simple-introduction-9780321884916" class="button large-2 columns">
+                                    <h3>InformIT</h3>
+                                    <p>Bundle <span>$43.19</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="javascripts/jquery.js"></script>
+        <script src="javascripts/foundation.min.js"></script>
+        <script src="javascripts/index.js"></script>
+        <script src="../../paydiv.io/static/jzed.js"></script>
+        <script src="../../paydiv.io/static/js/videojs/video.js"></script>
+        <link rel="stylesheet" href="../../paydiv.io/static/js/videojs/video-js.css">
+        <script src="../../paydiv.io/static/api/v1/paydiv.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script>$(document).foundation();</script>
+
+        <script type="text/javascript">
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24168052-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+        </script>
+        
+    </body>
+
+<!-- Mirrored from learnpythonthehardway.org/book/ex4.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:18 GMT -->
+</html>
+

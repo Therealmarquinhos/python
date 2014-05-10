@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    
+<!-- Mirrored from learnpythonthehardway.org/book/ex6.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:18 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Learn Python</title>
+        <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+        <link href="stylesheets/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/main.css" /> 
+        <script src="javascripts/modernizr.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
+<title>Exercise 6: Strings and Text</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="content-wrap">
+                <div class="row"><!-- header start -->
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                            <ul class="button-group">
+                                <li><a href="index.html" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                                <li><a href="#video" class="button"><i id="video_toggle_icon" class="fa fa-play fa-1x"></i></a></li>
+                                <li><a href="help.html" class="button"><i class="fa fa-ambulance fa-1x"></i></a></li>
+                            </ul>
+                        </div>
+                        <h1><a href="index.html"><img src="images/logo.png"></a></h1>
+                    </div>
+                </div><!-- header end -->
+                <div class="row"><!-- main_wrap start -->
+                    <div class="wrap scrol">
+                        <div class="row inner">
+                            <div class="large-12 columns">
+                                <h1 class="title">Exercise 6: Strings and Text</h1>
+                                <p>While you have already been writing strings, you still do not know what they do.  In this exercise we create a bunch of variables with complex strings so you can see what they are for.  First an explanation of strings.</p>
+<p>A string is usually a bit of text you want to display to someone, or &quot;export&quot; out of the program you are writing.  Python knows you want something to be a string when you put either <tt class="docutils literal">&quot;</tt> (double-quotes) or <tt class="docutils literal">'</tt> (single-quotes) around the text.  You saw this many times with your use of <tt class="docutils literal">print</tt> when you put the text you want to go to the string inside <tt class="docutils literal">&quot;</tt> or <tt class="docutils literal">'</tt> after the <tt class="docutils literal">print</tt>.  Then Python prints it.</p>
+<p>Strings may contain the format characters you have discovered so far.  You simply put the formatted variables in the string, and then a <tt class="docutils literal">%</tt> (percent) character, followed by the variable.  The <em>only</em> catch is that if you want multiple formats in your string to print multiple variables, you need to put them inside <tt class="docutils literal">( )</tt> (parenthesis) separated by <tt class="docutils literal">,</tt> (commas).  It's as if you were telling me to buy you a list of items from the store and you said, &quot;I want milk, eggs, bread, and soup.&quot;  Only as a programmer we say, &quot;(milk, eggs, bread, soup).&quot;</p>
+<p>We will now type in a whole bunch of strings, variables, and formats, and print them.  You will also practice using short abbreviated variable names.  Programmers love saving themselves time at your expense by using annoying cryptic variable names, so let's get you started being able to read and write them early on.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><a name="ex--ex6.py-idio.html-1"></a><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;There are </span><span class="si">%d</span><span class="s"> types of people.&quot;</span> <span class="o">%</span> <span class="mi">10</span>
+<a name="ex--ex6.py-idio.html-2"></a><span class="n">binary</span> <span class="o">=</span> <span class="s">&quot;binary&quot;</span>
+<a name="ex--ex6.py-idio.html-3"></a><span class="n">do_not</span> <span class="o">=</span> <span class="s">&quot;don&#39;t&quot;</span>
+<a name="ex--ex6.py-idio.html-4"></a><span class="n">y</span> <span class="o">=</span> <span class="s">&quot;Those who know </span><span class="si">%s</span><span class="s"> and those who </span><span class="si">%s</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">binary</span><span class="p">,</span> <span class="n">do_not</span><span class="p">)</span>
+<a name="ex--ex6.py-idio.html-5"></a>
+<a name="ex--ex6.py-idio.html-6"></a><span class="k">print</span> <span class="n">x</span>
+<a name="ex--ex6.py-idio.html-7"></a><span class="k">print</span> <span class="n">y</span>
+<a name="ex--ex6.py-idio.html-8"></a>
+<a name="ex--ex6.py-idio.html-9"></a><span class="k">print</span> <span class="s">&quot;I said: </span><span class="si">%r</span><span class="s">.&quot;</span> <span class="o">%</span> <span class="n">x</span>
+<a name="ex--ex6.py-idio.html-10"></a><span class="k">print</span> <span class="s">&quot;I also said: &#39;</span><span class="si">%s</span><span class="s">&#39;.&quot;</span> <span class="o">%</span> <span class="n">y</span>
+<a name="ex--ex6.py-idio.html-11"></a>
+<a name="ex--ex6.py-idio.html-12"></a><span class="n">hilarious</span> <span class="o">=</span> <span class="bp">False</span>
+<a name="ex--ex6.py-idio.html-13"></a><span class="n">joke_evaluation</span> <span class="o">=</span> <span class="s">&quot;Isn&#39;t that joke so funny?! </span><span class="si">%r</span><span class="s">&quot;</span>
+<a name="ex--ex6.py-idio.html-14"></a>
+<a name="ex--ex6.py-idio.html-15"></a><span class="k">print</span> <span class="n">joke_evaluation</span> <span class="o">%</span> <span class="n">hilarious</span>
+<a name="ex--ex6.py-idio.html-16"></a>
+<a name="ex--ex6.py-idio.html-17"></a><span class="n">w</span> <span class="o">=</span> <span class="s">&quot;This is the left side of...&quot;</span>
+<a name="ex--ex6.py-idio.html-18"></a><span class="n">e</span> <span class="o">=</span> <span class="s">&quot;a string with a right side.&quot;</span>
+<a name="ex--ex6.py-idio.html-19"></a>
+<a name="ex--ex6.py-idio.html-20"></a><span class="k">print</span> <span class="n">w</span> <span class="o">+</span> <span class="n">e</span>
+</pre></div>
+</td></tr></table><div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<div class="highlight"><pre><a name="ex--ex6.sh-idio-shint-pyg.html-1"></a><span class="gp">$</span> python ex6.py
+<a name="ex--ex6.sh-idio-shint-pyg.html-2"></a><span class="go">There are 10 types of people.</span>
+<a name="ex--ex6.sh-idio-shint-pyg.html-3"></a><span class="go">Those who know binary and those who don&#39;t.</span>
+<a name="ex--ex6.sh-idio-shint-pyg.html-4"></a><span class="go">I said: &#39;There are 10 types of people.&#39;.</span>
+<a name="ex--ex6.sh-idio-shint-pyg.html-5"></a><span class="go">I also said: &#39;Those who know binary and those who don&#39;t.&#39;.</span>
+<a name="ex--ex6.sh-idio-shint-pyg.html-6"></a><span class="go">Isn&#39;t that joke so funny?! False</span>
+<a name="ex--ex6.sh-idio-shint-pyg.html-7"></a><span class="go">This is the left side of...a string with a right side.</span>
+</pre></div></div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Go through this program and write a comment above each line explaining it.</li>
+<li>Find all the places where a string is put inside a string.  There are four places.</li>
+<li>Are you sure there are only four places?  How do you know?  Maybe I like lying.</li>
+<li>Explain why adding the two strings <tt class="docutils literal">w</tt> and <tt class="docutils literal">e</tt> with <tt class="docutils literal">+</tt> makes a longer string.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>What is the difference between <tt class="docutils literal">%r</tt> and <tt class="docutils literal">%s</tt>?</dt>
+<dd>Use the <tt class="docutils literal">%r</tt> for debugging, since it displays the &quot;raw&quot; data of the variable, but the others are used for displaying to users.</dd>
+<dt>What's the point of <tt class="docutils literal">%s</tt> and <tt class="docutils literal">%d</tt> when you can just use <tt class="docutils literal">%r</tt>?</dt>
+<dd>The <tt class="docutils literal">%r</tt> is best for debugging, and the other formats are for actually displaying variables to users.</dd>
+<dt>If you thought the joke was funny could you write <tt class="docutils literal">hilarious = True</tt>?</dt>
+<dd>Yes, and you'll learn more about these boolean values in Exercise 27.</dd>
+<dt>Why do you put <tt class="docutils literal">'</tt> (single-quotes) around some strings and not others?</dt>
+<dd>Mostly it's because of style, but I'll use a single-quote inside a string that has double-quotes.  Look at line 10 to see how I'm doing that.</dd>
+<dt>I get the error <tt class="docutils literal">TypeError: not all arguments converted during string formatting</tt>.</dt>
+<dd>You need to make sure that the line of code is exactly the same. What happens in this error is you have more <tt class="docutils literal">%</tt> format characters in the string than variables to put in them.  Go back and figure out what you did wrong.</dd>
+</dl>
+</div>
+                            </div>
+                        </div>
+
+                        <div id="video" class="row inner">
+                            <div class="small-12 small-centered columns">
+                                <div data-paydiv_product="2" id='paydiv'>
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                                <!-- oops, these don't work 
+                            <ul class="button-group">
+                                <li><a href="/book/" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                            </ul>
+                            -->
+                        </div>
+
+                        <h1>
+                            <a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- End Main Content and Sidebar -->
+
+                <div id="footer">
+                    <div class="row footer"><!-- footer tabs start -->
+                        <div class="large-12 columns">
+                            <div class="row">
+                                <div class="large-10 columns" id="footer-banner">
+                                    <span class="buy">Buy Learn Python The Hard Way, 3rd Edition Books And Videos From These Retailers</span>
+                                </div>
+                                <div class="large-2 columns" id="twitter-banner">
+<a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="https://paydiv.io/access/buy/2/" class="button large-2 columns">
+                                    <h3>Zed</h3>
+                                    <p>PDF+Videos+Updates<span>$29.95</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/0321884914/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321884914&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/B00FGUS948/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00FGUS948&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Kindle<span>$17.27</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780321884916" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780133124347&amp;itm=1&amp;usri=learn+python+the+hard+way" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Nook (No Videos)<span>$17.99</span></p>
+                                </a>
+                                <a href="http://www.informit.com/store/learn-python-the-hard-way-a-very-simple-introduction-9780321884916" class="button large-2 columns">
+                                    <h3>InformIT</h3>
+                                    <p>Bundle <span>$43.19</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="javascripts/jquery.js"></script>
+        <script src="javascripts/foundation.min.js"></script>
+        <script src="javascripts/index.js"></script>
+        <script src="../../paydiv.io/static/jzed.js"></script>
+        <script src="../../paydiv.io/static/js/videojs/video.js"></script>
+        <link rel="stylesheet" href="../../paydiv.io/static/js/videojs/video-js.css">
+        <script src="../../paydiv.io/static/api/v1/paydiv.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script>$(document).foundation();</script>
+
+        <script type="text/javascript">
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24168052-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+        </script>
+        
+    </body>
+
+<!-- Mirrored from learnpythonthehardway.org/book/ex6.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:18 GMT -->
+</html>
+

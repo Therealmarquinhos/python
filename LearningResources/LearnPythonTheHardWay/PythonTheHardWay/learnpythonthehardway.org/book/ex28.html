@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    
+<!-- Mirrored from learnpythonthehardway.org/book/ex28.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:20 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Learn Python</title>
+        <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+        <link href="stylesheets/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/main.css" /> 
+        <script src="javascripts/modernizr.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
+<title>Exercise 28: Boolean Practice</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="content-wrap">
+                <div class="row"><!-- header start -->
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                            <ul class="button-group">
+                                <li><a href="index.html" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                                <li><a href="#video" class="button"><i id="video_toggle_icon" class="fa fa-play fa-1x"></i></a></li>
+                                <li><a href="help.html" class="button"><i class="fa fa-ambulance fa-1x"></i></a></li>
+                            </ul>
+                        </div>
+                        <h1><a href="index.html"><img src="images/logo.png"></a></h1>
+                    </div>
+                </div><!-- header end -->
+                <div class="row"><!-- main_wrap start -->
+                    <div class="wrap scrol">
+                        <div class="row inner">
+                            <div class="large-12 columns">
+                                <h1 class="title">Exercise 28: Boolean Practice</h1>
+                                <p>The logic combinations you learned from the last exercise are called &quot;boolean&quot; logic expressions.  Boolean logic is used <em>everywhere</em> in programming.  They are essential fundamental parts of computation and knowing them very well is akin to knowing your scales in music.</p>
+<p>In this exercise you will take the logic exercises you memorized and start trying them out in Python.  Take each of these logic problems, and write out what you think the answer will be.  In each case it will be either True or False.  Once you have the answers written down, you will start Python in your Terminal and type them in to confirm your answers.</p>
+<ol class="arabic simple">
+<li><tt class="docutils literal">True and True</tt></li>
+<li><tt class="docutils literal">False and True</tt></li>
+<li><tt class="docutils literal">1 == 1 and 2 == 1</tt></li>
+<li><tt class="docutils literal">&quot;test&quot; == &quot;test&quot;</tt></li>
+<li><tt class="docutils literal">1 == 1 or 2 != 1</tt></li>
+<li><tt class="docutils literal">True and 1 == 1</tt></li>
+<li><tt class="docutils literal">False and 0 != 0</tt></li>
+<li><tt class="docutils literal">True or 1 == 1</tt></li>
+<li><tt class="docutils literal">&quot;test&quot; == &quot;testing&quot;</tt></li>
+<li><tt class="docutils literal">1 != 0 and 2 == 1</tt></li>
+<li><tt class="docutils literal">&quot;test&quot; != &quot;testing&quot;</tt></li>
+<li><tt class="docutils literal">&quot;test&quot; == 1</tt></li>
+<li><tt class="docutils literal">not (True and False)</tt></li>
+<li><tt class="docutils literal">not (1 == 1 and 0 != 1)</tt></li>
+<li><tt class="docutils literal">not (10 == 1 or 1000 == 1000)</tt></li>
+<li><tt class="docutils literal">not (1 != 10 or 3 == 4)</tt></li>
+<li><tt class="docutils literal">not (&quot;testing&quot; == &quot;testing&quot; and &quot;Zed&quot; == &quot;Cool Guy&quot;)</tt></li>
+<li><tt class="docutils literal">1 == 1 and not (&quot;testing&quot; == 1 or 1 == 0)</tt></li>
+<li><tt class="docutils literal">&quot;chunky&quot; == &quot;bacon&quot; and not (3 == 4 or 3 == 3)</tt></li>
+<li><tt class="docutils literal">3 == 3 and not (&quot;testing&quot; == &quot;testing&quot; or &quot;Python&quot; == &quot;Fun&quot;)</tt></li>
+</ol>
+<p>I will also give you a trick to help you figure out the more complicated ones toward the end.</p>
+<p>Whenever you see these boolean logic statements, you can solve them easily by this simple process:</p>
+<ol class="arabic simple">
+<li>Find an equality test (== or !=) and replace it with its truth.</li>
+<li>Find each and/or inside parentheses and solve those first.</li>
+<li>Find each not and invert it.</li>
+<li>Find any remaining and/or and solve it.</li>
+<li>When you are done you should have True or False.</li>
+</ol>
+<p>I will demonstrate with a variation on #20:</p>
+<pre class="code python literal-block">
+<span class="literal number integer">3</span> <span class="operator">!=</span> <span class="literal number integer">4</span> <span class="operator word">and</span> <span class="operator word">not</span> <span class="punctuation">(</span><span class="literal string">&quot;testing&quot;</span> <span class="operator">!=</span> <span class="literal string">&quot;test&quot;</span> <span class="operator word">or</span> <span class="literal string">&quot;Python&quot;</span> <span class="operator">==</span> <span class="literal string">&quot;Python&quot;</span><span class="punctuation">)</span>
+</pre>
+<p>Here's me going through each of the steps and showing you the translation until I've boiled it down to a single result:</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Solve each equality test:</dt>
+<dd><ol class="first last loweralpha simple">
+<li><tt class="docutils literal">3 != 4</tt> is <tt class="docutils literal">True</tt>: <tt class="docutils literal">True and not (&quot;testing&quot; != &quot;test&quot; or &quot;Python&quot; == &quot;Python&quot;)</tt></li>
+<li><tt class="docutils literal">&quot;testing&quot; != &quot;test&quot;</tt> is <tt class="docutils literal">True</tt>: <tt class="docutils literal">True and not (True or &quot;Python&quot; == &quot;Python&quot;)</tt></li>
+<li><tt class="docutils literal">&quot;Python&quot; == &quot;Python&quot;</tt>: <tt class="docutils literal">True and not (True or True)</tt></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Find each and/or in parentheses ():</dt>
+<dd><ol class="first last loweralpha simple">
+<li><tt class="docutils literal">(True or True)</tt> is True: <tt class="docutils literal">True and not (True)</tt></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Find each not and invert it:</dt>
+<dd><ol class="first last loweralpha simple">
+<li><tt class="docutils literal">not (True)</tt> is False: <tt class="docutils literal">True and False</tt></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Find any remaining and/or and solve them:</dt>
+<dd><ol class="first last loweralpha simple">
+<li><tt class="docutils literal">True and False</tt> is False</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+<p>With that we're done and know the result is False.</p>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The more complicated ones may seem <em>very</em> hard at first.  You should be able to give a good first stab at solving them, but do not get discouraged.  I'm just getting you primed for more of these &quot;logic gymnastics&quot; so that later cool stuff is much easier.  Just stick with it, and keep track of what you get wrong, but do not worry that it's not getting in your head quite yet.  It'll come.</p>
+</div>
+<div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<p>After you have tried to guess at these, this is what your session with Python might look like:</p>
+<pre class="code pycon literal-block">
+<span class="generic output">$ python
+Python 2.5.1 (r251:54863, Feb  6 2009, 19:02:12)
+[GCC 4.0.1 (Apple Inc. build 5465)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+</span><span class="name builtin pseudo"></span><span class="generic prompt">&gt;&gt;&gt; </span><span class="name builtin pseudo">True</span> <span class="operator word">and</span> <span class="name builtin pseudo">True</span>
+<span class="generic output">True
+</span><span class="literal number integer"></span><span class="generic prompt">&gt;&gt;&gt; </span><span class="literal number integer">1</span> <span class="operator">==</span> <span class="literal number integer">1</span> <span class="operator word">and</span> <span class="literal number integer">2</span> <span class="operator">==</span> <span class="literal number integer">2</span>
+<span class="generic output">True</span>
+</pre>
+</div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>There are a lot of operators in Python similar to <tt class="docutils literal">!=</tt> and <tt class="docutils literal">==</tt>.  Try to find out as many &quot;equality operators&quot; as you can.  They should be like <tt class="docutils literal">&lt;</tt> or <tt class="docutils literal">&lt;=</tt>.</li>
+<li>Write out the names of each of these equality operators.  For example, I call <tt class="docutils literal">!=</tt> &quot;not equal.&quot;</li>
+<li>Play with the Python by typing out new boolean operators, and before you hit enter try to shout out what it is.  Do not think about it, just the first thing that comes to mind.  Write it down, then hit Enter, and keep track of how many you get right and wrong.</li>
+<li>Throw away the piece of paper from #3 away so you do not accidentally try to use it later.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>Why does <tt class="docutils literal">&quot;test&quot; and &quot;test&quot;</tt> return <tt class="docutils literal">&quot;test&quot;</tt> or <tt class="docutils literal">1 and 1</tt> return <tt class="docutils literal">1</tt> instead of <tt class="docutils literal">True</tt>?</dt>
+<dd>Python and many languages like it return one of the operands to their boolean expressions rather than just <tt class="docutils literal">True</tt> or <tt class="docutils literal">False</tt>.  This means that if you did <tt class="docutils literal">False and 1</tt> you get the first operand (<tt class="docutils literal">False</tt>) but if you do <tt class="docutils literal">True and 1</tt> your get the second (<tt class="docutils literal">1</tt>). Play with this a bit.</dd>
+<dt>Is there any difference between <tt class="docutils literal">!=</tt> and <tt class="docutils literal">&lt;&gt;</tt>?</dt>
+<dd>Python has deprecated <tt class="docutils literal">&lt;&gt;</tt> in favor of <tt class="docutils literal">!=</tt>, so use <tt class="docutils literal">!=</tt>. Other than that there should be no difference.</dd>
+<dt>Isn't there a shortcut?</dt>
+<dd>Yes. Any <tt class="docutils literal">and</tt> expression that has a <tt class="docutils literal">False</tt> is immediately <tt class="docutils literal">False</tt>, so you can stop there.  Any <tt class="docutils literal">or</tt> expression that has a <tt class="docutils literal">True</tt> is immediately <tt class="docutils literal">True</tt>, so you can stop there. But make sure that you can process the whole expression because later it becomes helpful.</dd>
+</dl>
+</div>
+                            </div>
+                        </div>
+
+                        <div id="video" class="row inner">
+                            <div class="small-12 small-centered columns">
+                                <div data-paydiv_product="2" id='paydiv'>
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                                <!-- oops, these don't work 
+                            <ul class="button-group">
+                                <li><a href="/book/" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                            </ul>
+                            -->
+                        </div>
+
+                        <h1>
+                            <a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- End Main Content and Sidebar -->
+
+                <div id="footer">
+                    <div class="row footer"><!-- footer tabs start -->
+                        <div class="large-12 columns">
+                            <div class="row">
+                                <div class="large-10 columns" id="footer-banner">
+                                    <span class="buy">Buy Learn Python The Hard Way, 3rd Edition Books And Videos From These Retailers</span>
+                                </div>
+                                <div class="large-2 columns" id="twitter-banner">
+<a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="https://paydiv.io/access/buy/2/" class="button large-2 columns">
+                                    <h3>Zed</h3>
+                                    <p>PDF+Videos+Updates<span>$29.95</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/0321884914/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321884914&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/B00FGUS948/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00FGUS948&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Kindle<span>$17.27</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780321884916" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780133124347&amp;itm=1&amp;usri=learn+python+the+hard+way" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Nook (No Videos)<span>$17.99</span></p>
+                                </a>
+                                <a href="http://www.informit.com/store/learn-python-the-hard-way-a-very-simple-introduction-9780321884916" class="button large-2 columns">
+                                    <h3>InformIT</h3>
+                                    <p>Bundle <span>$43.19</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="javascripts/jquery.js"></script>
+        <script src="javascripts/foundation.min.js"></script>
+        <script src="javascripts/index.js"></script>
+        <script src="../../paydiv.io/static/jzed.js"></script>
+        <script src="../../paydiv.io/static/js/videojs/video.js"></script>
+        <link rel="stylesheet" href="../../paydiv.io/static/js/videojs/video-js.css">
+        <script src="../../paydiv.io/static/api/v1/paydiv.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script>$(document).foundation();</script>
+
+        <script type="text/javascript">
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24168052-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+        </script>
+        
+    </body>
+
+<!-- Mirrored from learnpythonthehardway.org/book/ex28.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:20 GMT -->
+</html>
+

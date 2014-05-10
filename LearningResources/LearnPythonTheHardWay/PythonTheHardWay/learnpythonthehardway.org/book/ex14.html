@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    
+<!-- Mirrored from learnpythonthehardway.org/book/ex14.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:19 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Learn Python</title>
+        <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+        <link href="stylesheets/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/main.css" /> 
+        <script src="javascripts/modernizr.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
+<title>Exercise 14: Prompting and Passing</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="content-wrap">
+                <div class="row"><!-- header start -->
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                            <ul class="button-group">
+                                <li><a href="index.html" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                                <li><a href="#video" class="button"><i id="video_toggle_icon" class="fa fa-play fa-1x"></i></a></li>
+                                <li><a href="help.html" class="button"><i class="fa fa-ambulance fa-1x"></i></a></li>
+                            </ul>
+                        </div>
+                        <h1><a href="index.html"><img src="images/logo.png"></a></h1>
+                    </div>
+                </div><!-- header end -->
+                <div class="row"><!-- main_wrap start -->
+                    <div class="wrap scrol">
+                        <div class="row inner">
+                            <div class="large-12 columns">
+                                <h1 class="title">Exercise 14: Prompting and Passing</h1>
+                                <p>Let's do one exercise that uses <tt class="docutils literal">argv</tt> and <tt class="docutils literal">raw_input</tt> together to ask the user something specific.  You will need this for the next exercise where we learn to read and write files.  In this exercise we'll use <tt class="docutils literal">raw_input</tt> slightly differently by having it just print a simple <tt class="docutils literal">&gt;</tt> prompt.  This is similar to a game like Zork or Adventure.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><a name="ex--ex14.py-idio.html-1"></a><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
+<a name="ex--ex14.py-idio.html-2"></a>
+<a name="ex--ex14.py-idio.html-3"></a><span class="n">script</span><span class="p">,</span> <span class="n">user_name</span> <span class="o">=</span> <span class="n">argv</span>
+<a name="ex--ex14.py-idio.html-4"></a><span class="n">prompt</span> <span class="o">=</span> <span class="s">&#39;&gt; &#39;</span>
+<a name="ex--ex14.py-idio.html-5"></a>
+<a name="ex--ex14.py-idio.html-6"></a><span class="k">print</span> <span class="s">&quot;Hi </span><span class="si">%s</span><span class="s">, I&#39;m the </span><span class="si">%s</span><span class="s"> script.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">user_name</span><span class="p">,</span> <span class="n">script</span><span class="p">)</span>
+<a name="ex--ex14.py-idio.html-7"></a><span class="k">print</span> <span class="s">&quot;I&#39;d like to ask you a few questions.&quot;</span>
+<a name="ex--ex14.py-idio.html-8"></a><span class="k">print</span> <span class="s">&quot;Do you like me </span><span class="si">%s</span><span class="s">?&quot;</span> <span class="o">%</span> <span class="n">user_name</span>
+<a name="ex--ex14.py-idio.html-9"></a><span class="n">likes</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a name="ex--ex14.py-idio.html-10"></a>
+<a name="ex--ex14.py-idio.html-11"></a><span class="k">print</span> <span class="s">&quot;Where do you live </span><span class="si">%s</span><span class="s">?&quot;</span> <span class="o">%</span> <span class="n">user_name</span>
+<a name="ex--ex14.py-idio.html-12"></a><span class="n">lives</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a name="ex--ex14.py-idio.html-13"></a>
+<a name="ex--ex14.py-idio.html-14"></a><span class="k">print</span> <span class="s">&quot;What kind of computer do you have?&quot;</span>
+<a name="ex--ex14.py-idio.html-15"></a><span class="n">computer</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a name="ex--ex14.py-idio.html-16"></a>
+<a name="ex--ex14.py-idio.html-17"></a><span class="k">print</span> <span class="s">&quot;&quot;&quot;</span>
+<a name="ex--ex14.py-idio.html-18"></a><span class="s">Alright, so you said </span><span class="si">%r</span><span class="s"> about liking me.</span>
+<a name="ex--ex14.py-idio.html-19"></a><span class="s">You live in </span><span class="si">%r</span><span class="s">.  Not sure where that is.</span>
+<a name="ex--ex14.py-idio.html-20"></a><span class="s">And you have a </span><span class="si">%r</span><span class="s"> computer.  Nice.</span>
+<a name="ex--ex14.py-idio.html-21"></a><span class="s">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">likes</span><span class="p">,</span> <span class="n">lives</span><span class="p">,</span> <span class="n">computer</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><p>Notice though that we make a variable <tt class="docutils literal">prompt</tt> that is set to the prompt we want, and we give that to <tt class="docutils literal">raw_input</tt> instead of typing it over and over.  Now if we want to make the prompt something else, we just change it in this one spot and rerun the script.</p>
+<p>Very handy.</p>
+<div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<p>When you run this, remember that you have to give the script your name for the <tt class="docutils literal">argv</tt> arguments.</p>
+<div class="highlight"><pre><a name="ex--ex14.sh-idio-shint-pyg.html-1"></a><span class="gp">$</span> python ex14.py zed
+<a name="ex--ex14.sh-idio-shint-pyg.html-2"></a><span class="go">Hi zed, I&#39;m the ex14.py script.</span>
+<a name="ex--ex14.sh-idio-shint-pyg.html-3"></a><span class="go">I&#39;d like to ask you a few questions.</span>
+<a name="ex--ex14.sh-idio-shint-pyg.html-4"></a><span class="go">Do you like me zed?</span>
+<a name="ex--ex14.sh-idio-shint-pyg.html-5"></a><span class="gp">&gt;</span>  Yes
+<a name="ex--ex14.sh-idio-shint-pyg.html-6"></a><span class="go">Where do you live zed?</span>
+<a name="ex--ex14.sh-idio-shint-pyg.html-7"></a><span class="gp">&gt;</span>  San Francisco
+<a name="ex--ex14.sh-idio-shint-pyg.html-8"></a><span class="go">What kind of computer do you have?</span>
+<a name="ex--ex14.sh-idio-shint-pyg.html-9"></a><span class="gp">&gt;</span>  Tandy 1000
+<a name="ex--ex14.sh-idio-shint-pyg.html-10"></a>
+<a name="ex--ex14.sh-idio-shint-pyg.html-11"></a><span class="go">Alright, so you said &#39;Yes&#39; about liking me.</span>
+<a name="ex--ex14.sh-idio-shint-pyg.html-12"></a><span class="go">You live in &#39;San Francisco&#39;.  Not sure where that is.</span>
+<a name="ex--ex14.sh-idio-shint-pyg.html-13"></a><span class="go">And you have a &#39;Tandy 1000&#39; computer.  Nice.</span>
+</pre></div></div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Find out what Zork and Adventure were.  Try to find a copy and play it.</li>
+<li>Change the <tt class="docutils literal">prompt</tt> variable to something else entirely.</li>
+<li>Add another argument and use it in your script.</li>
+<li>Make sure you understand how I combined a <tt class="docutils literal">&quot;&quot;&quot;</tt> style multiline string with the <tt class="docutils literal">%</tt> format activator as the last print.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>I get <tt class="docutils literal">SyntaxError: invalid syntax</tt> when I run this script.</dt>
+<dd>Again, you have to run it right on the command line, not inside Python.  If you type <tt class="docutils literal">python</tt>, and then try to type <tt class="docutils literal">python ex14.py Zed</tt> it will fail because you are running <em>Python inside Python</em>.  Close your window and then just type <tt class="docutils literal">python ex14.py Zed</tt>.</dd>
+<dt>I don't understand what you mean by changing the prompt?</dt>
+<dd>See the variable <tt class="docutils literal">prompt = '&gt; '</tt>.  Change that to have a different value. You know this, it's just a string and you've done 13 exercises making them, so take the time to figure it out.</dd>
+<dt>I get the error <tt class="docutils literal">ValueError: need more than 1 value to unpack</tt>.</dt>
+<dd>Remember when I said you need to look at the What You Should See (<tt class="docutils literal">WYSS</tt>) section and replicate what I did? You need to do the same thing here and focus on how I type the command in, and why I have a command line argument.</dd>
+<dt>Can I use double-quotes for the <tt class="docutils literal">prompt</tt> variable?</dt>
+<dd>You totally can. Go ahead and try that.</dd>
+<dt>You have a Tandy computer?</dt>
+<dd>I did when I was little.</dd>
+<dt>I get <tt class="docutils literal">NameError: name 'prompt' is not defined</tt> when I run it.</dt>
+<dd>You either spelled the name of the <tt class="docutils literal">prompt</tt> variable wrong or forgot that line.  Go back and compare each line of code to mine, and start at the bottom of the script and work your way to the top.</dd>
+<dt>How can I run this from IDLE?</dt>
+<dd>Don't use IDLE.</dd>
+</dl>
+</div>
+                            </div>
+                        </div>
+
+                        <div id="video" class="row inner">
+                            <div class="small-12 small-centered columns">
+                                <div data-paydiv_product="2" id='paydiv'>
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                                <!-- oops, these don't work 
+                            <ul class="button-group">
+                                <li><a href="/book/" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                            </ul>
+                            -->
+                        </div>
+
+                        <h1>
+                            <a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- End Main Content and Sidebar -->
+
+                <div id="footer">
+                    <div class="row footer"><!-- footer tabs start -->
+                        <div class="large-12 columns">
+                            <div class="row">
+                                <div class="large-10 columns" id="footer-banner">
+                                    <span class="buy">Buy Learn Python The Hard Way, 3rd Edition Books And Videos From These Retailers</span>
+                                </div>
+                                <div class="large-2 columns" id="twitter-banner">
+<a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="https://paydiv.io/access/buy/2/" class="button large-2 columns">
+                                    <h3>Zed</h3>
+                                    <p>PDF+Videos+Updates<span>$29.95</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/0321884914/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321884914&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/B00FGUS948/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00FGUS948&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Kindle<span>$17.27</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780321884916" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780133124347&amp;itm=1&amp;usri=learn+python+the+hard+way" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Nook (No Videos)<span>$17.99</span></p>
+                                </a>
+                                <a href="http://www.informit.com/store/learn-python-the-hard-way-a-very-simple-introduction-9780321884916" class="button large-2 columns">
+                                    <h3>InformIT</h3>
+                                    <p>Bundle <span>$43.19</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="javascripts/jquery.js"></script>
+        <script src="javascripts/foundation.min.js"></script>
+        <script src="javascripts/index.js"></script>
+        <script src="../../paydiv.io/static/jzed.js"></script>
+        <script src="../../paydiv.io/static/js/videojs/video.js"></script>
+        <link rel="stylesheet" href="../../paydiv.io/static/js/videojs/video-js.css">
+        <script src="../../paydiv.io/static/api/v1/paydiv.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script>$(document).foundation();</script>
+
+        <script type="text/javascript">
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24168052-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+        </script>
+        
+    </body>
+
+<!-- Mirrored from learnpythonthehardway.org/book/ex14.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:19 GMT -->
+</html>
+

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    
+<!-- Mirrored from learnpythonthehardway.org/book/ex9.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:19 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Learn Python</title>
+        <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+        <link href="stylesheets/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/main.css" /> 
+        <script src="javascripts/modernizr.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
+<title>Exercise 9: Printing, Printing, Printing</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="content-wrap">
+                <div class="row"><!-- header start -->
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                            <ul class="button-group">
+                                <li><a href="index.html" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                                <li><a href="#video" class="button"><i id="video_toggle_icon" class="fa fa-play fa-1x"></i></a></li>
+                                <li><a href="help.html" class="button"><i class="fa fa-ambulance fa-1x"></i></a></li>
+                            </ul>
+                        </div>
+                        <h1><a href="index.html"><img src="images/logo.png"></a></h1>
+                    </div>
+                </div><!-- header end -->
+                <div class="row"><!-- main_wrap start -->
+                    <div class="wrap scrol">
+                        <div class="row inner">
+                            <div class="large-12 columns">
+                                <h1 class="title">Exercise 9: Printing, Printing, Printing</h1>
+                                <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><a name="ex--ex9.py-idio.html-1"></a><span class="c"># Here&#39;s some new strange stuff, remember type it exactly.</span>
+<a name="ex--ex9.py-idio.html-2"></a>
+<a name="ex--ex9.py-idio.html-3"></a><span class="n">days</span> <span class="o">=</span> <span class="s">&quot;Mon Tue Wed Thu Fri Sat Sun&quot;</span>
+<a name="ex--ex9.py-idio.html-4"></a><span class="n">months</span> <span class="o">=</span> <span class="s">&quot;Jan</span><span class="se">\n</span><span class="s">Feb</span><span class="se">\n</span><span class="s">Mar</span><span class="se">\n</span><span class="s">Apr</span><span class="se">\n</span><span class="s">May</span><span class="se">\n</span><span class="s">Jun</span><span class="se">\n</span><span class="s">Jul</span><span class="se">\n</span><span class="s">Aug&quot;</span>
+<a name="ex--ex9.py-idio.html-5"></a>
+<a name="ex--ex9.py-idio.html-6"></a><span class="k">print</span> <span class="s">&quot;Here are the days: &quot;</span><span class="p">,</span> <span class="n">days</span>
+<a name="ex--ex9.py-idio.html-7"></a><span class="k">print</span> <span class="s">&quot;Here are the months: &quot;</span><span class="p">,</span> <span class="n">months</span>
+<a name="ex--ex9.py-idio.html-8"></a>
+<a name="ex--ex9.py-idio.html-9"></a><span class="k">print</span> <span class="s">&quot;&quot;&quot;</span>
+<a name="ex--ex9.py-idio.html-10"></a><span class="s">There&#39;s something going on here.</span>
+<a name="ex--ex9.py-idio.html-11"></a><span class="s">With the three double-quotes.</span>
+<a name="ex--ex9.py-idio.html-12"></a><span class="s">We&#39;ll be able to type as much as we like.</span>
+<a name="ex--ex9.py-idio.html-13"></a><span class="s">Even 4 lines if we want, or 5, or 6.</span>
+<a name="ex--ex9.py-idio.html-14"></a><span class="s">&quot;&quot;&quot;</span>
+</pre></div>
+</td></tr></table><div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<div class="highlight"><pre><a name="ex--ex9.sh-idio-shint-pyg.html-1"></a><span class="gp">$</span> python ex9.py
+<a name="ex--ex9.sh-idio-shint-pyg.html-2"></a><span class="go">Here are the days:  Mon Tue Wed Thu Fri Sat Sun</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-3"></a><span class="go">Here are the months:  Jan</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-4"></a><span class="go">Feb</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-5"></a><span class="go">Mar</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-6"></a><span class="go">Apr</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-7"></a><span class="go">May</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-8"></a><span class="go">Jun</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-9"></a><span class="go">Jul</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-10"></a><span class="go">Aug</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-11"></a>
+<a name="ex--ex9.sh-idio-shint-pyg.html-12"></a><span class="go">There&#39;s something going on here.</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-13"></a><span class="go">With the three double-quotes.</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-14"></a><span class="go">We&#39;ll be able to type as much as we like.</span>
+<a name="ex--ex9.sh-idio-shint-pyg.html-15"></a><span class="go">Even 4 lines if we want, or 5, or 6.</span>
+</pre></div></div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Do your checks of your work, write down your mistakes, try not to make them on the next exercise.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>What if I wanted to start the months on a new line?</dt>
+<dd><p class="first">You simply start the string with <tt class="docutils literal">\n</tt> like this:</p>
+<pre class="last literal-block">
+&quot;\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug&quot;
+</pre>
+</dd>
+<dt>Why do the <tt class="docutils literal">\n</tt> newlines not work when I use <tt class="docutils literal">%r</tt>?</dt>
+<dd>That's how <tt class="docutils literal">%r</tt> formatting works; it prints it the way you wrote it (or close to it).  It's the &quot;raw&quot; format for debugging.</dd>
+<dt>Why do I get an error when I put spaces between the three double-quotes?</dt>
+<dd>You have to type them like <tt class="docutils literal">&quot;&quot;&quot;</tt> and not <tt class="docutils literal">&quot; &quot; &quot;</tt>, meaning with <em>no</em> spaces between each one.</dd>
+<dt>Is it bad that my errors are always spelling mistakes?</dt>
+<dd>Most programming errors in the beginning (and even later) are simple spelling mistakes, typos, or getting simple things out of order.</dd>
+</dl>
+</div>
+                            </div>
+                        </div>
+
+                        <div id="video" class="row inner">
+                            <div class="small-12 small-centered columns">
+                                <div data-paydiv_product="2" id='paydiv'>
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                                <!-- oops, these don't work 
+                            <ul class="button-group">
+                                <li><a href="/book/" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                            </ul>
+                            -->
+                        </div>
+
+                        <h1>
+                            <a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- End Main Content and Sidebar -->
+
+                <div id="footer">
+                    <div class="row footer"><!-- footer tabs start -->
+                        <div class="large-12 columns">
+                            <div class="row">
+                                <div class="large-10 columns" id="footer-banner">
+                                    <span class="buy">Buy Learn Python The Hard Way, 3rd Edition Books And Videos From These Retailers</span>
+                                </div>
+                                <div class="large-2 columns" id="twitter-banner">
+<a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="https://paydiv.io/access/buy/2/" class="button large-2 columns">
+                                    <h3>Zed</h3>
+                                    <p>PDF+Videos+Updates<span>$29.95</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/0321884914/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321884914&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/B00FGUS948/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00FGUS948&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Kindle<span>$17.27</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780321884916" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780133124347&amp;itm=1&amp;usri=learn+python+the+hard+way" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Nook (No Videos)<span>$17.99</span></p>
+                                </a>
+                                <a href="http://www.informit.com/store/learn-python-the-hard-way-a-very-simple-introduction-9780321884916" class="button large-2 columns">
+                                    <h3>InformIT</h3>
+                                    <p>Bundle <span>$43.19</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="javascripts/jquery.js"></script>
+        <script src="javascripts/foundation.min.js"></script>
+        <script src="javascripts/index.js"></script>
+        <script src="../../paydiv.io/static/jzed.js"></script>
+        <script src="../../paydiv.io/static/js/videojs/video.js"></script>
+        <link rel="stylesheet" href="../../paydiv.io/static/js/videojs/video-js.css">
+        <script src="../../paydiv.io/static/api/v1/paydiv.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script>$(document).foundation();</script>
+
+        <script type="text/javascript">
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24168052-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+        </script>
+        
+    </body>
+
+<!-- Mirrored from learnpythonthehardway.org/book/ex9.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:19 GMT -->
+</html>
+

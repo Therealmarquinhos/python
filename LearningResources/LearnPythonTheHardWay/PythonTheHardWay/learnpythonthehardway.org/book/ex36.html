@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    
+<!-- Mirrored from learnpythonthehardway.org/book/ex36.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:20 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Learn Python</title>
+        <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+        <link href="stylesheets/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/main.css" /> 
+        <script src="javascripts/modernizr.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
+<title>Exercise 36: Designing and Debugging</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="content-wrap">
+                <div class="row"><!-- header start -->
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                            <ul class="button-group">
+                                <li><a href="index.html" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                                <li><a href="#video" class="button"><i id="video_toggle_icon" class="fa fa-play fa-1x"></i></a></li>
+                                <li><a href="help.html" class="button"><i class="fa fa-ambulance fa-1x"></i></a></li>
+                            </ul>
+                        </div>
+                        <h1><a href="index.html"><img src="images/logo.png"></a></h1>
+                    </div>
+                </div><!-- header end -->
+                <div class="row"><!-- main_wrap start -->
+                    <div class="wrap scrol">
+                        <div class="row inner">
+                            <div class="large-12 columns">
+                                <h1 class="title">Exercise 36: Designing and Debugging</h1>
+                                <p>Now that you know <tt class="docutils literal"><span class="pre">if-statements</span></tt>, I'm going to give you some rules for <tt class="docutils literal"><span class="pre">for-loops</span></tt> and <tt class="docutils literal"><span class="pre">while-loops</span></tt> that will keep you out of trouble.  I'm also going to give you some tips on debugging so that you can figure out problems with your program.  Finally, you are going to design a similar little game as in the last exercise but with a slight twist.</p>
+<div class="section" id="rules-for-if-statements">
+<h1>Rules For If-Statements</h1>
+<ol class="arabic simple">
+<li>Every <tt class="docutils literal"><span class="pre">if-statement</span></tt> must have an <tt class="docutils literal">else</tt>.</li>
+<li>If this <tt class="docutils literal">else</tt> should never be run because it doesn't make sense, then you must use a <tt class="docutils literal">die</tt> function in the <tt class="docutils literal">else</tt> that prints out an error message and dies, just like we did in the last exercise.  This will find <em>many</em> errors.</li>
+<li>Never nest <tt class="docutils literal"><span class="pre">if-statements</span></tt> more than two deep and always try to do them one deep.  This means if you put an <tt class="docutils literal">if</tt> in an <tt class="docutils literal">if</tt> then you should be looking to move that second <tt class="docutils literal">if</tt> into another function.</li>
+<li>Treat <tt class="docutils literal"><span class="pre">if-statements</span></tt> like paragraphs, where each <tt class="docutils literal">if elif else</tt> grouping is like a set of sentences.  Put blank lines before and after.</li>
+<li>Your boolean tests should be simple.  If they are complex, move their calculations to variables earlier in your function and use a good name for the variable.</li>
+</ol>
+<p>If you follow these simple rules, you will start writing better code than most programmers.  Go back to the last exercise and see if I followed all of these rules.  If not, fix it.</p>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Never be a slave to the rules in real life.  For training purposes you need to follow these rules to make your mind strong, but in real life sometimes these rules are just stupid.  If you think a rule is stupid, try not using it.</p>
+</div>
+</div>
+<div class="section" id="rules-for-loops">
+<h1>Rules For Loops</h1>
+<ol class="arabic simple">
+<li>Use a <tt class="docutils literal"><span class="pre">while-loop</span></tt> only to loop forever, and that means probably never.  This only applies to Python; other languages are different.</li>
+<li>Use a <tt class="docutils literal"><span class="pre">for-loop</span></tt> for all other kinds of looping, especially if there is a fixed or limited number of things to loop over.</li>
+</ol>
+</div>
+<div class="section" id="tips-for-debugging">
+<h1>Tips For Debugging</h1>
+<ol class="arabic simple">
+<li>Do not use a &quot;debugger.&quot;  A debugger is like doing a full-body scan on a sick person.  You do not get any specific useful information, and you find a whole lot of information that doesn't help and is just confusing.</li>
+<li>The best way to debug a program is to use <tt class="docutils literal">print</tt> to print out the values of variables at points in the program to see where they go wrong.</li>
+<li>Make sure parts of your programs work as you work on them.  Do not write massive files of code before you try to run them.  Code a little, run a little, fix a little.</li>
+</ol>
+</div>
+<div class="section" id="homework">
+<h1>Homework</h1>
+<p>Now write a similar game to the one that I created in the last exercise.  It can be any kind of game you want in the same flavor. Spend a week on it making it as interesting as possible.  For Study Drills, use lists, functions, and modules (remember those from Exercise 13?) as much as possible, and find as many new pieces of Python as you can to make the game work.</p>
+<p>However, before you start coding you must write up a map for your game.  Create the rooms, monsters, and traps that the player must go through on paper before you code.</p>
+<p>Once you have your map, try to code it up.  If you find problems with the map then adjust it and make the code match.</p>
+<p>One final word of advice:  Every programmer becomes paralyzed by irrational fear starting a new large project.  They then use procrastination to avoid confronting this fear and end up not getting their program working or even started.  I do this.  Everyone does this.  The best way to avoid this is to make a list of things you should do and then do them one at a time.</p>
+<p>Just start doing it, do a small version, make it bigger, keep a list of things to do, and do them.</p>
+</div>
+                            </div>
+                        </div>
+
+                        <div id="video" class="row inner">
+                            <div class="small-12 small-centered columns">
+                                <div data-paydiv_product="2" id='paydiv'>
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns top-buttons">
+                        <div class="nav-bar right">
+                                <!-- oops, these don't work 
+                            <ul class="button-group">
+                                <li><a href="/book/" class="button"><i class="fa fa-fast-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="prev_link" class="button"><i class="fa fa-step-backward fa-1x"></i></a></li>
+                                <li><a href="#" id="next_link" class="button"><i class="fa fa-step-forward fa-1x"></i></a></li>
+                            </ul>
+                            -->
+                        </div>
+
+                        <h1>
+                            <a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- End Main Content and Sidebar -->
+
+                <div id="footer">
+                    <div class="row footer"><!-- footer tabs start -->
+                        <div class="large-12 columns">
+                            <div class="row">
+                                <div class="large-10 columns" id="footer-banner">
+                                    <span class="buy">Buy Learn Python The Hard Way, 3rd Edition Books And Videos From These Retailers</span>
+                                </div>
+                                <div class="large-2 columns" id="twitter-banner">
+<a href="https://twitter.com/lzsthw" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @lzsthw</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="https://paydiv.io/access/buy/2/" class="button large-2 columns">
+                                    <h3>Zed</h3>
+                                    <p>PDF+Videos+Updates<span>$29.95</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/0321884914/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321884914&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.amazon.com/gp/product/B00FGUS948/ref=as_li_tf_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00FGUS948&amp;linkCode=as2&amp;tag=lepythhawa-20" class="button large-2 columns">
+                                    <h3>Amazon</h3>
+                                    <p>Kindle<span>$17.27</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780321884916" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Paperback<span>$23.99</span></p>
+                                </a>
+                                <a href="http://www.barnesandnoble.com/w/learn-python-the-hard-way-zed-shaw/1112055406?ean=9780133124347&amp;itm=1&amp;usri=learn+python+the+hard+way" class="button large-2 columns">
+                                    <h3>B&amp;N</h3>
+                                    <p>Nook (No Videos)<span>$17.99</span></p>
+                                </a>
+                                <a href="http://www.informit.com/store/learn-python-the-hard-way-a-very-simple-introduction-9780321884916" class="button large-2 columns">
+                                    <h3>InformIT</h3>
+                                    <p>Bundle <span>$43.19</span></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="javascripts/jquery.js"></script>
+        <script src="javascripts/foundation.min.js"></script>
+        <script src="javascripts/index.js"></script>
+        <script src="../../paydiv.io/static/jzed.js"></script>
+        <script src="../../paydiv.io/static/js/videojs/video.js"></script>
+        <link rel="stylesheet" href="../../paydiv.io/static/js/videojs/video-js.css">
+        <script src="../../paydiv.io/static/api/v1/paydiv.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script>$(document).foundation();</script>
+
+        <script type="text/javascript">
+        
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-24168052-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        
+        </script>
+        
+    </body>
+
+<!-- Mirrored from learnpythonthehardway.org/book/ex36.html by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 06 May 2014 19:07:20 GMT -->
+</html>
+
