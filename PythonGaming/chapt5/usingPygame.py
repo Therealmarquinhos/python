@@ -42,7 +42,24 @@ while not done:
     #clearing the screen white
     screen.fill(WHITE)
     
+    #Drawing a green line from 0,0 to 100,100 which is 5 pixels wide
     pygame.draw.line(screen, GREEN, [0, 0], [100, 100], 5)
+    
+    #using a loop to draw 5 lines moving down by 10 pixel each time
+    for y_offset in range(10,100,10):
+        pygame.draw.line(screen, RED, [0,y_offset], [100,(100+y_offset)],5)
+        y_offset += 10
+    
+    #drawing a rectangle needs the left corner orgin, height and width coordinates.
+    pygame.draw.rect(screen, BLACK, [20, 60, 50, 100],5)
+
+    #drawing an ellipse inside the rectangle
+    pygame.draw.ellipse(screen, GREEN, [20,60,50,100],3)
+
+    #printing text is a 3 stage process. Define the print, shape the text and print it.
+    font = pygame.font.Font(None, 25)
+    text = font.render("Some text", True, BLACK)
+    screen.blit(text,[250,250])
     
     #VERY important to flip the screen. This command flips the graphics to the screen
     pygame.display.flip()
